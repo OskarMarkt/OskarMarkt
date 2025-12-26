@@ -68,16 +68,21 @@ body{
   text-align:center;
 }
 
+/* LOGO – unverändert */
 .logo-hero{
   width:420px;
   max-width:90%;
-  margin-bottom:32px;
+  margin-bottom:12px; /* 🔼 NUR HIER: kleiner Abstand */
   filter:
     drop-shadow(0 12px 28px rgba(0,0,0,.7))
     drop-shadow(0 0 18px rgba(212,175,55,.6));
 }
 
-.hero-text{margin-top:12px}
+/* 🔼 TEXTBLOCK WURDE NUR NACH OBEN GEZOGEN */
+.hero-text{
+  margin-top:0;
+  padding-top:0;
+}
 
 h1{
   font-size:44px;
@@ -90,7 +95,7 @@ h1{
 .sub-de{font-size:16px;opacity:.9}
 
 .badge{
-  margin:18px 0;
+  margin:16px 0;
   padding:8px 22px;
   border-radius:22px;
   background:rgba(111,191,115,.22);
@@ -148,7 +153,7 @@ h1{
 .socials img{width:24px}
 
 @media(max-width:768px){
-  .logo-hero{width:280px}
+  .logo-hero{width:280px;margin-bottom:8px}
   h1{font-size:32px}
 }
 </style>
@@ -174,7 +179,7 @@ h1{
 
       <div class="buttons">
         <a class="button" href="https://www.tiktok.com/@oskargrosshandel" target="_blank">TikTok</a>
-        <a class="button" href="https://maps.google.com/?q=Marktstraße+7+41236+Mönchengladbach" target="_blank">
+        <a class="button" href="https://maps.google.com/?q=Marktstraße+27+41236+Mönchengladbach" target="_blank">
           📍 Zum Markt navigieren
         </a>
       </div>
@@ -203,7 +208,7 @@ h1{
   <div class="overlay"></div>
   <div class="section-text">
     <h2>قسم اللحوم – حلال</h2>
-    <div class="de">Halal-Fleisch · ⭐ Fleischtheke schließt um 19:00 Uhr</div>
+    <div class="de">Halal-Fleisch · ⭐ *Fleischtheke schließt um 19:00 Uhr</div>
   </div>
 </section>
 
@@ -245,7 +250,7 @@ h1{
 
   <p>
     📞 +49 172 5859134<br>
-    📍 Marktstraße 7, 41236 Mönchengladbach<br>
+    📍 Marktstraße 27, 41236 Mönchengladbach<br>
     🕒 Montag – Samstag: 08:30 – 20:30
   </p>
 </section>
