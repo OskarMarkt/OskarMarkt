@@ -22,15 +22,14 @@ body{
   color:#fff;
 }
 
-/* ================== SECTIONS ================== */
+/* ================== HERO ================== */
 .section{
   position:relative;
   min-height:100vh;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
-  padding:90px 20px;
-  overflow:hidden;
+  padding:60px 20px;
 }
 
 .bg{
@@ -39,13 +38,6 @@ body{
   background-size:cover;
   background-position:center;
   filter:brightness(.85);
-  transform:scale(1.05);
-  animation:bgZoom 20s linear infinite;
-}
-
-@keyframes bgZoom{
-  0%{transform:scale(1.05)}
-  100%{transform:scale(1.1)}
 }
 
 .overlay{
@@ -58,26 +50,28 @@ body{
   );
 }
 
-/* ================== LOGO ICON ================== */
+/* ================== LOGO ZONE ================== */
+.logo-wrapper{
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:20px;
+  z-index:3;
+}
+
 .logo-hero{
-  position:absolute;
-  top:11%;
-  left:50%;
-  transform:translateX(-50%);
   width:400px;
   max-width:85%;
-  z-index:3;
-
   filter:
     drop-shadow(0 12px 28px rgba(0,0,0,.75))
     drop-shadow(0 0 18px rgba(212,175,55,.6));
-
-  animation:logoFade 1.6s ease forwards;
+  animation:logoFade 1.4s ease forwards;
 }
 
 @keyframes logoFade{
-  from{opacity:0;transform:translate(-50%, -10px)}
-  to{opacity:1;transform:translate(-50%, 0)}
+  from{opacity:0;transform:translateY(-12px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 /* ================== CONTENT ================== */
@@ -86,6 +80,7 @@ body{
   z-index:2;
   max-width:880px;
   text-align:center;
+  margin-top:50px; /* ← WICHTIG: Abstand unter Logo */
   animation:fadeUp 1.2s ease forwards;
 }
 
@@ -117,13 +112,6 @@ h1{
   background:rgba(111,191,115,.22);
   border:1px solid rgba(111,191,115,.45);
   font-size:14px;
-  animation:pulse 3s infinite;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(111,191,115,.35)}
-  70%{box-shadow:0 0 0 14px rgba(111,191,115,0)}
-  100%{box-shadow:0 0 0 0 rgba(111,191,115,0)}
 }
 
 /* ================== BUTTONS ================== */
@@ -145,7 +133,6 @@ h1{
   box-shadow:0 18px 45px rgba(212,175,55,.4);
   transition:.35s;
 }
-
 .button:hover{
   transform:translateY(-5px);
   box-shadow:0 30px 65px rgba(212,175,55,.6);
@@ -186,7 +173,6 @@ h1{
   justify-content:center;
   transition:.35s;
 }
-
 .socials a:hover{
   background:var(--gold);
   transform:translateY(-4px);
@@ -196,7 +182,8 @@ h1{
 
 /* ================== MOBILE ================== */
 @media(max-width:768px){
-  .logo-hero{width:270px;top:10%}
+  .logo-hero{width:270px}
+  .content{margin-top:40px}
   h1{font-size:32px}
 }
 </style>
@@ -209,8 +196,12 @@ h1{
   <div class="bg" style="background-image:url('storefront.jpg')"></div>
   <div class="overlay"></div>
 
-  <img src="logo.png" class="logo-hero" alt="Oskar Markt Logo">
+  <!-- LOGO EIGENE ZONE -->
+  <div class="logo-wrapper">
+    <img src="logo.png" class="logo-hero" alt="Oskar Markt Logo">
+  </div>
 
+  <!-- TEXT -->
   <div class="content">
     <h1>أوسكار ماركت</h1>
     <div class="sub-de">Der moderne orientalische Markt – Frische & Qualität</div>
