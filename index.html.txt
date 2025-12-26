@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oskar Markt</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.section {
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: gold;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #7CFC98;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.button {
+    display: block;
+    background: gold;
+    color: black;
+    padding: 15px;
+    margin: 15px auto;
+    width: 85%;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.small {
+    font-size: 14px;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="section">
+    <img src="storefront.jpg" alt="Oskar Markt">
+    <h1>أوسكار ماركت</h1>
+    <p>السوق الشرقي العصري – طزاجة وجودة يومية</p>
+</div>
+
+<!-- TIKTOK -->
+<div class="section">
+    <h2>🔥 عروض الأسبوع</h2>
+    <p>نقوم بنشر أحدث العروض والتخفيضات أسبوعيًا على TikTok</p>
+    <a class="button" href="#">TikTok – Oskar Markt</a>
+</div>
+
+<!-- FRUITS -->
+<div class="section">
+    <img src="fruits1.jpg">
+    <img src="fruits2.jpg">
+    <h2>🍎 فواكه وخضروات طازجة</h2>
+    <p>توريد يومي • جودة عالية • اختيار بعناية</p>
+</div>
+
+<!-- MEAT -->
+<div class="section">
+    <img src="meat.jpg">
+    <h2>🥩 قسم اللحوم – حلال</h2>
+    <p>لحوم طازجة • تقطيع حسب الطلب</p>
+    <p class="small">⭐ قسم اللحوم يغلق الساعة 19:00</p>
+</div>
+
+<!-- GROCERIES -->
+<div class="section">
+    <img src="shelves1.jpg">
+    <img src="shelves2.jpg">
+    <h2>🛒 منتجات شرقية مختارة</h2>
+    <p>توابل • بقوليات • مخللات • زيوت زيتون</p>
+</div>
+
+<!-- HOUSE -->
+<div class="section">
+    <img src="house.jpg">
+    <h2>🫖 مستلزمات منزلية شرقية</h2>
+    <p>لمسة جمال وأناقة للبيت</p>
+</div>
+
+<!-- HOURS -->
+<div class="section">
+    <h2>🕒 أوقات العمل</h2>
+    <p>من الإثنين إلى السبت<br>08:30 – 20:30</p>
+    <p class="small">⭐ قسم اللحوم يغلق الساعة 19:00</p>
+</div>
+
+<!-- LOCATION -->
+<div class="section">
+    <h2>📍 موقعنا</h2>
+    <p>Marktstraße 7<br>41236 Mönchengladbach</p>
+    <a class="button" href="https://maps.google.com/?q=Marktstraße+7+41236+Mönchengladbach">
+        📌 التنقل عبر Google Maps
+    </a>
+</div>
+
+</body>
+</html>
