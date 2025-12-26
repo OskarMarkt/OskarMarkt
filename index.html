@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oskar Markt</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0e0e0e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--dark);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  padding:18px 0;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(10px);
+  text-align:center;
+}
+header img{
+  width:120px;
+}
+
+/* SECTIONS */
+.section{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(.45);
+}
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.55)
+  );
+}
+.content{
+  position:relative;
+  max-width:850px;
+  padding:40px;
+  text-align:center;
+  animation:fadeUp 1.2s ease both;
+}
+h1{
+  font-size:46px;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+h2{
+  font-size:34px;
+  margin-bottom:12px;
+}
+p{
+  font-size:18px;
+  line-height:1.8;
+  opacity:.95;
+}
+
+/* BUTTON */
+.button{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 42px;
+  background:var(--gold);
+  color:#000;
+  font-weight:700;
+  border-radius:40px;
+  text-decoration:none;
+  box-shadow:0 15px 35px rgba(212,175,55,.35);
+  transition:.3s;
+}
+.button:hover{
+  transform:translateY(-4px);
+  box-shadow:0 25px 50px rgba(212,175,55,.6);
+}
+
+/* SOCIAL */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:28px;
+}
+.socials a{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+}
+.socials a:hover{
+  background:var(--gold);
+}
+.socials img{
+  width:22px;
+}
+
+/* INFO */
+.info{
+  background:#0b0b0b;
+  padding:90px 20px;
+  text-align:center;
+}
+.info p{
+  margin-bottom:14px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1{font-size:34px}
+  h2{font-size:28px}
+  p{font-size:16px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Oskar Markt">
+</header>
+
+<!-- HERO -->
+<section class="section">
+  <div class="bg" style="background-image:url('storefront.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>أوسكار ماركت</h1>
+    <p>السوق الشرقي العصري – طزاجة وجودة يومية</p>
+    <p style="font-size:15px;opacity:.8">
+      Der moderne orientalische Markt – Frische & Qualität
+    </p>
+
+    <!-- NEW: Aktionen Hinweis -->
+    <p style="margin-top:18px;font-size:16px;opacity:.9">
+      🔥 عروض جديدة أسبوعيًا  
+      <br>
+      يتم نشر العروض والخصومات أسبوعيًا على وسائل التواصل الاجتماعي
+    </p>
+
+    <a class="button" href="https://www.tiktok.com/@oskargrosshandel" target="_blank">
+      عروضنا على TikTok
+    </a>
+  </div>
+</section>
+
+<!-- FRUITS -->
+<section class="section">
+  <div class="bg" style="background-image:url('fruits1.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>فواكه وخضروات طازجة</h2>
+    <p>توريد يومي • اختيار بعناية</p>
+  </div>
+</section>
+
+<!-- MEAT -->
+<section class="section">
+  <div class="bg" style="background-image:url('meat.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>قسم اللحوم – حلال</h2>
+    <p>لحوم طازجة • تقطيع حسب الطلب</p>
+    <p style="font-size:15px">⭐ قسم اللحوم يغلق الساعة 19:00</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <div class="bg" style="background-image:url('shelves1.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h2>منتجات شرقية مختارة</h2>
+    <p>توابل • بقوليات • زيوت زيتون • مخللات</p>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
+  <p>Bei Fragen kannst du uns kontaktieren über:</p>
+
+  <div class="socials">
+    <a href="https://www.tiktok.com/@oskargrosshandel" target="_blank">
+      <img src="tiktok.png">
+    </a>
+    <a href="https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr" target="_blank">
+      <img src="facebook.png">
+    </a>
+    <a href="https://wa.me/491725859134" target="_blank">
+      <img src="whatsapp.png">
+    </a>
+  </div>
+
+  <p style="margin-top:26px">
+    📞 +49 172 5859134<br>
+    📍 Marktstraße 7, 41236 Mönchengladbach
+  </p>
+
+  <p>
+    🕒 Montag – Samstag: 08:30 – 20:30
+  </p>
+</section>
+
+</body>
+</html>
