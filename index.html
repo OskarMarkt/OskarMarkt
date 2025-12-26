@@ -12,18 +12,15 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Oskar Markt">
 
-<!-- hreflang -->
 <link rel="alternate" hreflang="de" href="https://oskarmarkt.github.io/OskarMarkt/">
 <link rel="alternate" hreflang="ar" href="https://oskarmarkt.github.io/OskarMarkt/">
 <link rel="alternate" hreflang="x-default" href="https://oskarmarkt.github.io/OskarMarkt/">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Oskar Markt – Orientalischer Markt | أوسكار ماركت">
-<meta property="og:description" content="Orientalischer Markt in Mönchengladbach mit Halal-Fleisch & frischen Produkten. متجر شرقي بلحوم حلال وفواكه طازجة">
+<meta property="og:description" content="Orientalischer Markt in Mönchengladbach mit Halal-Fleisch & frischen Produkten">
 <meta property="og:type" content="website">
 <meta property="og:image" content="storefront.jpg">
 
-<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,11 +36,7 @@
   },
   "telephone": "+491725859134",
   "openingHours": "Mo-Sa 08:30-20:30",
-  "servesCuisine": [
-    "Orientalisch",
-    "Arabisch",
-    "Halal"
-  ],
+  "servesCuisine": ["Orientalisch","Arabisch","Halal"],
   "sameAs": [
     "https://www.tiktok.com/@oskargrosshandel",
     "https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr"
@@ -54,7 +47,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ⚠️ AB HIER: DEIN CSS – UNVERÄNDERT */
 :root{
   --gold:#d4af37;
   --green:#6fbf73;
@@ -63,9 +55,7 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   font-family:'Cairo',sans-serif;
@@ -82,16 +72,11 @@ body{
   justify-content:center;
   padding:90px 20px;
   overflow:hidden;
-
   opacity:0;
   transform:translateY(40px);
   transition:opacity 1s ease, transform 1s ease;
 }
-
-.section.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.section.show{opacity:1;transform:translateY(0)}
 
 .bg{
   position:absolute;
@@ -102,19 +87,12 @@ body{
   transform:scale(1.1);
   transition:transform 1.2s ease;
 }
-
-.section.show .bg{
-  transform:scale(1.05);
-}
+.section.show .bg{transform:scale(1.05)}
 
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.18),
-    rgba(0,0,0,.25)
-  );
+  background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.25));
 }
 
 /* ===== HERO ===== */
@@ -131,26 +109,21 @@ body{
   width:420px;
   max-width:90%;
   margin-bottom:12px;
-  filter:
-    drop-shadow(0 12px 28px rgba(0,0,0,.7))
-    drop-shadow(0 0 18px rgba(212,175,55,.6));
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.7))
+          drop-shadow(0 0 18px rgba(212,175,55,.6));
 }
 
-.hero-text{
-  transform:translateY(-90px);
-}
+.hero-text{transform:translateY(-90px)}
 
 h1{
   font-size:44px;
   color:var(--gold);
-  text-shadow:
-    0 2px 12px rgba(111,191,115,.35),
-    0 0 20px rgba(212,175,55,.35);
+  text-shadow:0 2px 12px rgba(111,191,115,.35),
+              0 0 20px rgba(212,175,55,.35);
 }
 
 .sub-de{font-size:16px;opacity:.9}
 
-/* BADGE */
 .badge{
   margin:16px 0;
   padding:8px 22px;
@@ -158,7 +131,7 @@ h1{
   background:rgba(111,191,115,.22);
   border:1px solid rgba(111,191,115,.45);
   font-size:14px;
-  animation:pulse 3.5s ease-in-out infinite;
+  animation:pulse 3.5s infinite;
 }
 
 @keyframes pulse{
@@ -167,7 +140,6 @@ h1{
   100%{box-shadow:0 0 0 0 rgba(111,191,115,0)}
 }
 
-/* BUTTONS */
 .buttons{
   display:flex;
   gap:14px;
@@ -182,48 +154,29 @@ h1{
   font-weight:700;
   border-radius:40px;
   text-decoration:none;
-  transition:all .35s ease;
+  transition:.35s;
   box-shadow:0 18px 45px rgba(212,175,55,.4);
 }
-
 .button:hover{
   transform:translateY(-6px);
   box-shadow:0 30px 70px rgba(212,175,55,.6);
 }
 
-/* TEXT SECTIONS */
-.section-text{
-  position:relative;
-  z-index:2;
-  text-align:center;
-}
+/* ===== TEXT SECTIONS ===== */
+.section-text{text-align:center;z-index:2}
+.section-text h2{font-size:36px;color:var(--gold)}
+.section-text .de{font-size:16px;opacity:.9}
 
-.section-text h2{
-  font-size:36px;
-  color:var(--gold);
-  margin-bottom:6px;
-}
-
-.section-text .de{
-  font-size:16px;
-  opacity:.9;
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer{
   background:#101010;
   padding:90px 20px;
   text-align:center;
-
   opacity:0;
   transform:translateY(40px);
   transition:opacity 1s ease, transform 1s ease;
 }
-
-.footer.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.footer.show{opacity:1;transform:translateY(0)}
 
 .socials{
   display:flex;
@@ -231,23 +184,14 @@ h1{
   gap:22px;
   margin:30px 0;
 }
-
 .socials a{
-  width:60px;
-  height:60px;
+  width:60px;height:60px;
   border-radius:50%;
   background:rgba(255,255,255,.15);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   transition:.35s;
 }
-
-.socials a:hover{
-  background:var(--gold);
-  transform:translateY(-4px);
-}
-
+.socials a:hover{background:var(--gold);transform:translateY(-4px)}
 .socials img{width:24px}
 
 @media(max-width:768px){
@@ -259,6 +203,97 @@ h1{
 </head>
 
 <body>
-<!-- ⚠️ BODY IST 1:1 DEIN ORIGINAL – UNVERÄNDERT -->
+
+<!-- HERO -->
+<section class="section">
+  <div class="bg" style="background-image:url('storefront.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="hero-stack">
+    <img src="logo.png" class="logo-hero">
+    <div class="hero-text">
+      <h1>أوسكار ماركت</h1>
+      <div class="sub-de">Der moderne orientalische Markt – Frische & Qualität</div>
+      <div class="badge">🔥 عروض جديدة أسبوعيًا – wöchentliche Angebote auf Social Media</div>
+      <div class="buttons">
+        <a class="button" href="https://www.tiktok.com/@oskargrosshandel">TikTok</a>
+        <a class="button" href="https://maps.google.com/?q=Marktstraße+27+41236+Mönchengladbach">📍 Zum Markt navigieren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBST -->
+<section class="section">
+  <div class="bg" style="background-image:url('fruits1.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="section-text">
+    <h2>فواكه وخضروات طازجة</h2>
+    <div class="de">Frisches Obst & Gemüse – täglich frisch</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="bg" style="background-image:url('fruits2.jpg')"></div>
+  <div class="overlay"></div>
+</section>
+
+<!-- FLEISCH -->
+<section class="section">
+  <div class="bg" style="background-image:url('meat.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="section-text">
+    <h2>قسم اللحوم – حلال</h2>
+    <div class="de">Halal-Fleisch · ⭐ Fleischtheke schließt um 19:00 Uhr</div>
+  </div>
+</section>
+
+<!-- REGALE -->
+<section class="section">
+  <div class="bg" style="background-image:url('shelves1.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="section-text">
+    <h2>منتجات شرقية مختارة</h2>
+    <div class="de">Konserven · Gewürze · Öle · Spezialitäten</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="bg" style="background-image:url('shelves2.jpg')"></div>
+  <div class="overlay"></div>
+</section>
+
+<!-- HAUSWAREN -->
+<section class="section">
+  <div class="bg" style="background-image:url('house.jpg')"></div>
+  <div class="overlay"></div>
+  <div class="section-text">
+    <h2>مستلزمات منزلية مختارة بعناية</h2>
+    <div class="de">Haushaltswaren für den täglichen Bedarf – praktisch & zuverlässig</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="footer">
+  <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
+  <p>Bei Fragen können Sie uns kontaktieren über:</p>
+  <div class="socials">
+    <a href="https://www.tiktok.com/@oskargrosshandel"><img src="tiktok.png"></a>
+    <a href="https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr"><img src="facebook.png"></a>
+    <a href="https://wa.me/491725859134"><img src="whatsapp.png"></a>
+  </div>
+  <p>
+    📞 +49 172 5859134<br>
+    📍 Marktstraße 27, 41236 Mönchengladbach<br>
+    🕒 Montag – Samstag: 08:30 – 20:30
+  </p>
+</section>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:0.2});
+document.querySelectorAll(".section,.footer").forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
