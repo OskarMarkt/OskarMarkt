@@ -22,7 +22,7 @@ body{
   color:#fff;
 }
 
-/* ===== GENERIC SECTION ===== */
+/* ===== SECTION ===== */
 .section{
   position:relative;
   min-height:100vh;
@@ -66,7 +66,6 @@ body{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  animation:fadeUp 1.2s ease forwards;
 }
 
 .logo-hero{
@@ -113,12 +112,6 @@ h1{
   font-weight:700;
   border-radius:40px;
   text-decoration:none;
-  box-shadow:0 18px 45px rgba(212,175,55,.4);
-  transition:.35s;
-}
-.button:hover{
-  transform:translateY(-5px);
-  box-shadow:0 30px 65px rgba(212,175,55,.6);
 }
 
 /* ===== TEXT SECTIONS ===== */
@@ -126,17 +119,13 @@ h1{
   position:relative;
   z-index:2;
   text-align:center;
-  animation:fadeUp 1.2s ease forwards;
 }
 .section-text h2{
   font-size:36px;
   color:var(--gold);
   margin-bottom:6px;
 }
-.section-text .de{
-  font-size:16px;
-  opacity:.9;
-}
+.section-text .de{font-size:16px;opacity:.9}
 
 /* ===== FOOTER ===== */
 .footer{
@@ -158,11 +147,6 @@ h1{
 }
 .socials img{width:24px}
 
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
 @media(max-width:768px){
   .logo-hero{width:280px}
   h1{font-size:32px}
@@ -174,7 +158,7 @@ h1{
 
 <!-- HERO -->
 <section class="section">
-  <div class="bg" style="background-image:url('house.png')"></div>
+  <div class="bg" style="background-image:url('storefront.jpg')"></div>
   <div class="overlay"></div>
 
   <div class="hero-stack">
@@ -200,7 +184,7 @@ h1{
 
 <!-- OBST -->
 <section class="section">
-  <div class="bg" style="background-image:url('fruits1.png')"></div>
+  <div class="bg" style="background-image:url('fruits1.jpg')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>فواكه وخضروات طازجة</h2>
@@ -209,13 +193,13 @@ h1{
 </section>
 
 <section class="section">
-  <div class="bg" style="background-image:url('fruits2.png')"></div>
+  <div class="bg" style="background-image:url('fruits2.jpg')"></div>
   <div class="overlay"></div>
 </section>
 
 <!-- FLEISCH -->
 <section class="section">
-  <div class="bg" style="background-image:url('meat.png')"></div>
+  <div class="bg" style="background-image:url('meat.jpg')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>قسم اللحوم – حلال</h2>
@@ -225,7 +209,7 @@ h1{
 
 <!-- REGALE -->
 <section class="section">
-  <div class="bg" style="background-image:url('shelves1.png')"></div>
+  <div class="bg" style="background-image:url('shelves1.jpg')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>منتجات شرقية مختارة</h2>
@@ -234,13 +218,13 @@ h1{
 </section>
 
 <section class="section">
-  <div class="bg" style="background-image:url('shelves2.png')"></div>
+  <div class="bg" style="background-image:url('shelves2.jpg')"></div>
   <div class="overlay"></div>
 </section>
 
 <!-- HAUSWAREN -->
 <section class="section">
-  <div class="bg" style="background-image:url('house.png')"></div>
+  <div class="bg" style="background-image:url('house.jpg')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>مستلزمات منزلية مختارة بعناية</h2>
