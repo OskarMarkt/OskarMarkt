@@ -3,7 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oskar Markt</title>
+
+<!-- ================= SEO ================= -->
+<title>Oskar Markt – Orientalischer Markt & Halal Fleisch in Mönchengladbach</title>
+<meta name="description" content="Oskar Markt – Orientalischer Markt in Mönchengladbach. Frisches Obst & Gemüse, Halal-Fleisch, orientalische Spezialitäten. Marktstraße 7.">
+<meta name="keywords" content="Orientalischer Markt Mönchengladbach, Halal Fleisch, Arabischer Supermarkt, Oskar Markt, Marktstraße 7">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Oskar Markt">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Oskar Markt – Orientalischer Markt in Mönchengladbach">
+<meta property="og:description" content="Frische orientalische Produkte & Halal-Fleisch. Marktstraße 7.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="storefront.jpg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GroceryStore",
+  "name":"Oskar Markt",
+  "image":"storefront.jpg",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Marktstraße 7",
+    "addressLocality":"Mönchengladbach",
+    "postalCode":"41236",
+    "addressCountry":"DE"
+  },
+  "telephone":"+491725859134",
+  "openingHours":"Mo-Sa 08:30-20:30",
+  "sameAs":[
+    "https://www.tiktok.com/@oskargrosshandel",
+    "https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr"
+  ]
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -15,7 +50,6 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -24,7 +58,7 @@ body{
   color:#fff;
 }
 
-/* ===== PROGRESS BAR ===== */
+/* ===== Progress Bar ===== */
 #progress{
   position:fixed;
   top:0;right:0;
@@ -34,7 +68,7 @@ body{
   z-index:9999;
 }
 
-/* ===== SECTION ===== */
+/* ===== Sections ===== */
 .section{
   position:relative;
   min-height:100vh;
@@ -47,10 +81,7 @@ body{
   transform:translateY(40px);
   transition:1s ease;
 }
-.section.show{
-  opacity:1;
-  transform:none;
-}
+.section.show{opacity:1;transform:none}
 
 .bg{
   position:absolute;
@@ -69,7 +100,7 @@ body{
   background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.25));
 }
 
-/* ===== HERO ===== */
+/* ===== Hero ===== */
 .hero-stack{
   position:relative;
   z-index:2;
@@ -124,7 +155,7 @@ h1{
 }
 .button:hover{transform:translateY(-5px)}
 
-/* ===== WEEKLY DEAL ===== */
+/* ===== Weekly ===== */
 .weekly{
   background:#111;
   padding:60px 20px;
@@ -145,11 +176,11 @@ h1{
   font-size:14px;
 }
 
-/* ===== TEXT SECTIONS ===== */
+/* ===== Section Text ===== */
 .section-text{text-align:center;z-index:2}
 .section-text h2{color:var(--gold)}
 
-/* ===== WHATSAPP BUTTON ===== */
+/* ===== WhatsApp ===== */
 #wa{
   position:fixed;
   bottom:25px;
@@ -166,13 +197,10 @@ h1{
   transition:.4s;
   z-index:999;
 }
-#wa.show{
-  opacity:1;
-  pointer-events:auto;
-}
+#wa.show{opacity:1;pointer-events:auto}
 #wa img{width:28px}
 
-/* ===== FOOTER ===== */
+/* ===== Footer ===== */
 .footer{
   background:#101010;
   padding:90px 20px;
@@ -198,7 +226,6 @@ h1{
 <section class="section">
   <div class="bg" style="background-image:url('storefront.jpg')"></div>
   <div class="overlay"></div>
-
   <div class="hero-stack">
     <img src="logo.png" class="logo-hero">
     <div class="hero-text">
@@ -271,7 +298,11 @@ h1{
 
 <!-- FOOTER -->
 <section class="footer">
-  <p>📞 +49 172 5859134<br>📍 Marktstraße 27, 41236 Mönchengladbach</p>
+  <p>
+    📞 +49 172 5859134<br>
+    📍 Marktstraße 27, 41236 Mönchengladbach<br>
+    🕒 Montag – Samstag 08:30 – 20:30
+  </p>
 </section>
 
 <script>
