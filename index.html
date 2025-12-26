@@ -22,7 +22,7 @@ body{
   color:#fff;
 }
 
-/* ===== SECTION ===== */
+/* ===== GENERIC SECTION ===== */
 .section{
   position:relative;
   min-height:100vh;
@@ -58,7 +58,7 @@ body{
   );
 }
 
-/* ===== HERO STACK ===== */
+/* ===== HERO ===== */
 .hero-stack{
   position:relative;
   z-index:2;
@@ -66,24 +66,19 @@ body{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  gap:20px;
   animation:fadeUp 1.2s ease forwards;
 }
 
-/* LOGO */
 .logo-hero{
   width:420px;
   max-width:90%;
-  margin-bottom:30px;
+  margin-bottom:32px;
   filter:
     drop-shadow(0 12px 28px rgba(0,0,0,.7))
     drop-shadow(0 0 18px rgba(212,175,55,.6));
 }
 
-/* TEXT */
-.hero-text{
-  margin-top:-10px;
-}
+.hero-text{margin-top:12px}
 
 h1{
   font-size:44px;
@@ -93,12 +88,8 @@ h1{
     0 0 20px rgba(212,175,55,.35);
 }
 
-.sub-de{
-  font-size:16px;
-  opacity:.9;
-}
+.sub-de{font-size:16px;opacity:.9}
 
-/* BADGE */
 .badge{
   margin:18px 0;
   padding:8px 22px;
@@ -108,7 +99,6 @@ h1{
   font-size:14px;
 }
 
-/* BUTTONS */
 .buttons{
   display:flex;
   gap:14px;
@@ -138,14 +128,11 @@ h1{
   text-align:center;
   animation:fadeUp 1.2s ease forwards;
 }
-
 .section-text h2{
   font-size:36px;
-  margin-bottom:6px;
   color:var(--gold);
-  text-shadow:0 2px 12px rgba(111,191,115,.35);
+  margin-bottom:6px;
 }
-
 .section-text .de{
   font-size:16px;
   opacity:.9;
@@ -157,7 +144,6 @@ h1{
   padding:90px 20px;
   text-align:center;
 }
-
 .socials{
   display:flex;
   justify-content:center;
@@ -165,28 +151,18 @@ h1{
   margin:30px 0;
 }
 .socials a{
-  width:60px;
-  height:60px;
+  width:60px;height:60px;
   border-radius:50%;
   background:rgba(255,255,255,.15);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.35s;
-}
-.socials a:hover{
-  background:var(--gold);
-  transform:translateY(-4px);
+  display:flex;align-items:center;justify-content:center;
 }
 .socials img{width:24px}
 
-/* ===== ANIM ===== */
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:768px){
   .logo-hero{width:280px}
   h1{font-size:32px}
@@ -196,13 +172,13 @@ h1{
 
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="section">
-  <div class="bg" style="background-image:url('storefront.jpg')"></div>
+  <div class="bg" style="background-image:url('house.png')"></div>
   <div class="overlay"></div>
 
   <div class="hero-stack">
-    <img src="logo.png" class="logo-hero" alt="Oskar Markt Logo">
+    <img src="logo.png" class="logo-hero">
 
     <div class="hero-text">
       <h1>أوسكار ماركت</h1>
@@ -222,9 +198,9 @@ h1{
   </div>
 </section>
 
-<!-- ===== OBST ===== -->
+<!-- OBST -->
 <section class="section">
-  <div class="bg" style="background-image:url('fruits.jpg')"></div>
+  <div class="bg" style="background-image:url('fruits1.png')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>فواكه وخضروات طازجة</h2>
@@ -232,9 +208,14 @@ h1{
   </div>
 </section>
 
-<!-- ===== FLEISCH ===== -->
 <section class="section">
-  <div class="bg" style="background-image:url('meat.jpg')"></div>
+  <div class="bg" style="background-image:url('fruits2.png')"></div>
+  <div class="overlay"></div>
+</section>
+
+<!-- FLEISCH -->
+<section class="section">
+  <div class="bg" style="background-image:url('meat.png')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>قسم اللحوم – حلال</h2>
@@ -242,25 +223,40 @@ h1{
   </div>
 </section>
 
-<!-- ===== REGAL / PRODUKTE ===== -->
+<!-- REGALE -->
 <section class="section">
-  <div class="bg" style="background-image:url('shelves.jpg')"></div>
+  <div class="bg" style="background-image:url('shelves1.png')"></div>
   <div class="overlay"></div>
   <div class="section-text">
     <h2>منتجات شرقية مختارة</h2>
-    <div class="de">Gewürze · Hülsenfrüchte · Olivenöl · Spezialitäten</div>
+    <div class="de">Konserven · Gewürze · Öle · Spezialitäten</div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<section class="section">
+  <div class="bg" style="background-image:url('shelves2.png')"></div>
+  <div class="overlay"></div>
+</section>
+
+<!-- HAUSWAREN -->
+<section class="section">
+  <div class="bg" style="background-image:url('house.png')"></div>
+  <div class="overlay"></div>
+  <div class="section-text">
+    <h2>مستلزمات منزلية مختارة بعناية</h2>
+    <div class="de">Haushaltswaren für den täglichen Bedarf – praktisch & zuverlässig</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <section class="footer">
   <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
   <p>Bei Fragen kannst du uns kontaktieren über:</p>
 
   <div class="socials">
-    <a href="https://www.tiktok.com/@oskargrosshandel" target="_blank"><img src="tiktok.png"></a>
-    <a href="https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr" target="_blank"><img src="facebook.png"></a>
-    <a href="https://wa.me/491725859134" target="_blank"><img src="whatsapp.png"></a>
+    <a href="https://www.tiktok.com/@oskargrosshandel"><img src="tiktok.png"></a>
+    <a href="https://www.facebook.com/share/1MxPRazW3Z/?mibextid=wwXIfr"><img src="facebook.png"></a>
+    <a href="https://wa.me/491725859134"><img src="whatsapp.png"></a>
   </div>
 
   <p>
