@@ -16,6 +16,10 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:'Cairo',sans-serif;
   background:var(--dark);
@@ -31,6 +35,15 @@ body{
   justify-content:center;
   padding:90px 20px;
   overflow:hidden;
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+
+.section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 .bg{
@@ -39,13 +52,12 @@ body{
   background-size:cover;
   background-position:center;
   filter:brightness(.9);
-  transform:scale(1.05);
-  animation:bgZoom 20s linear infinite;
+  transform:scale(1.1);
+  transition:transform 1.2s ease;
 }
 
-@keyframes bgZoom{
-  from{transform:scale(1.05)}
-  to{transform:scale(1.12)}
+.section.show .bg{
+  transform:scale(1.05);
 }
 
 .overlay{
@@ -68,7 +80,6 @@ body{
   text-align:center;
 }
 
-/* LOGO – UNVERÄNDERT */
 .logo-hero{
   width:420px;
   max-width:90%;
@@ -78,12 +89,11 @@ body{
     drop-shadow(0 0 18px rgba(212,175,55,.6));
 }
 
-/* 🔥 HIER IST DIE ERHÖHUNG – FEST INTEGRIERT */
+/* TEXTBLOCK – ERHÖHT */
 .hero-text{
-  transform: translateY(-90px);
+  transform:translateY(-90px);
 }
 
-/* ===== TEXT ===== */
 h1{
   font-size:44px;
   color:var(--gold);
@@ -94,6 +104,7 @@ h1{
 
 .sub-de{font-size:16px;opacity:.9}
 
+/* BADGE – PULSE */
 .badge{
   margin:16px 0;
   padding:8px 22px;
@@ -101,8 +112,16 @@ h1{
   background:rgba(111,191,115,.22);
   border:1px solid rgba(111,191,115,.45);
   font-size:14px;
+  animation:pulse 3.5s ease-in-out infinite;
 }
 
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(111,191,115,.35)}
+  70%{box-shadow:0 0 0 14px rgba(111,191,115,0)}
+  100%{box-shadow:0 0 0 0 rgba(111,191,115,0)}
+}
+
+/* BUTTONS – MICRO INTERACTION */
 .buttons{
   display:flex;
   gap:14px;
@@ -117,6 +136,13 @@ h1{
   font-weight:700;
   border-radius:40px;
   text-decoration:none;
+  transition:all .35s ease;
+  box-shadow:0 18px 45px rgba(212,175,55,.4);
+}
+
+.button:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 70px rgba(212,175,55,.6);
 }
 
 /* ===== TEXT SECTIONS ===== */
@@ -125,31 +151,57 @@ h1{
   z-index:2;
   text-align:center;
 }
+
 .section-text h2{
   font-size:36px;
   color:var(--gold);
   margin-bottom:6px;
 }
-.section-text .de{font-size:16px;opacity:.9}
+
+.section-text .de{
+  font-size:16px;
+  opacity:.9;
+}
 
 /* ===== FOOTER ===== */
 .footer{
   background:#101010;
   padding:90px 20px;
   text-align:center;
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 1s ease, transform 1s ease;
 }
+
+.footer.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 .socials{
   display:flex;
   justify-content:center;
   gap:22px;
   margin:30px 0;
 }
+
 .socials a{
-  width:60px;height:60px;
+  width:60px;
+  height:60px;
   border-radius:50%;
   background:rgba(255,255,255,.15);
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.35s;
 }
+
+.socials a:hover{
+  background:var(--gold);
+  transform:translateY(-4px);
+}
+
 .socials img{width:24px}
 
 /* ===== MOBILE ===== */
@@ -181,7 +233,7 @@ h1{
 
       <div class="buttons">
         <a class="button" href="https://www.tiktok.com/@oskargrosshandel" target="_blank">TikTok</a>
-        <a class="button" href="https://maps.google.com/?q=Marktstraße+27+41236+Mönchengladbach" target="_blank">
+        <a class="button" href="https://maps.google.com/?q=Marktstraße+7+41236+Mönchengladbach" target="_blank">
           📍 Zum Markt navigieren
         </a>
       </div>
@@ -242,7 +294,7 @@ h1{
 <!-- FOOTER -->
 <section class="footer">
   <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
-  <p>Bei Fragen können Sie uns kontaktieren über:</p>
+  <p>Bei Fragen kannst du uns kontaktieren über:</p>
 
   <div class="socials">
     <a href="https://www.tiktok.com/@oskargrosshandel"><img src="tiktok.png"></a>
@@ -252,10 +304,23 @@ h1{
 
   <p>
     📞 +49 172 5859134<br>
-    📍 Marktstraße 27, 41236 Mönchengladbach<br>
+    📍 Marktstraße 7, 41236 Mönchengladbach<br>
     🕒 Montag – Samstag: 08:30 – 20:30
   </p>
 </section>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll(".section, .footer")
+  .forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
