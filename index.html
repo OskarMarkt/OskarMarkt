@@ -22,14 +22,15 @@ body{
   color:#fff;
 }
 
-/* ================== HERO ================== */
+/* ===== SECTIONS ===== */
 .section{
   position:relative;
   min-height:100vh;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
-  padding:60px 20px;
+  padding:80px 20px;
+  overflow:hidden;
 }
 
 .bg{
@@ -38,6 +39,13 @@ body{
   background-size:cover;
   background-position:center;
   filter:brightness(.85);
+  transform:scale(1.05);
+  animation:bgZoom 18s linear infinite;
+}
+
+@keyframes bgZoom{
+  from{transform:scale(1.05)}
+  to{transform:scale(1.1)}
 }
 
 .overlay{
@@ -50,16 +58,19 @@ body{
   );
 }
 
-/* ================== LOGO ZONE ================== */
-.logo-wrapper{
+/* ===== HERO STACK (LOGO + TEXT ZENTRIERT) ===== */
+.hero-stack{
   position:relative;
-  width:100%;
+  z-index:2;
   display:flex;
-  justify-content:center;
-  margin-top:20px;
-  z-index:3;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:22px;
+  animation:fadeUp 1.2s ease forwards;
 }
 
+/* LOGO */
 .logo-hero{
   width:400px;
   max-width:85%;
@@ -74,21 +85,7 @@ body{
   to{opacity:1;transform:translateY(0)}
 }
 
-/* ================== CONTENT ================== */
-.content{
-  position:relative;
-  z-index:2;
-  max-width:880px;
-  text-align:center;
-  margin-top:50px; /* ← WICHTIG: Abstand unter Logo */
-  animation:fadeUp 1.2s ease forwards;
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(35px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
+/* TEXT */
 h1{
   font-size:44px;
   color:var(--gold);
@@ -98,29 +95,32 @@ h1{
 }
 
 .sub-de{
-  margin-top:6px;
   font-size:16px;
   opacity:.88;
 }
 
-/* ================== BADGE ================== */
+/* BADGE */
 .badge{
-  display:inline-block;
-  margin:20px 0;
   padding:8px 20px;
   border-radius:22px;
   background:rgba(111,191,115,.22);
   border:1px solid rgba(111,191,115,.45);
   font-size:14px;
+  animation:pulse 3s infinite;
 }
 
-/* ================== BUTTONS ================== */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(111,191,115,.35)}
+  70%{box-shadow:0 0 0 14px rgba(111,191,115,0)}
+  100%{box-shadow:0 0 0 0 rgba(111,191,115,0)}
+}
+
+/* BUTTONS */
 .buttons{
-  margin-top:28px;
   display:flex;
   gap:14px;
-  justify-content:center;
   flex-wrap:wrap;
+  justify-content:center;
 }
 
 .button{
@@ -138,7 +138,7 @@ h1{
   box-shadow:0 30px 65px rgba(212,175,55,.6);
 }
 
-/* ================== TEXT SECTIONS ================== */
+/* ===== TEXT SECTIONS ===== */
 .section-text h2{
   font-size:32px;
   margin-bottom:6px;
@@ -149,7 +149,7 @@ h1{
   opacity:.85;
 }
 
-/* ================== FOOTER ================== */
+/* ===== FOOTER ===== */
 .footer{
   background:#101010;
   padding:90px 20px;
@@ -162,7 +162,6 @@ h1{
   gap:22px;
   margin:30px 0;
 }
-
 .socials a{
   width:60px;
   height:60px;
@@ -177,13 +176,17 @@ h1{
   background:var(--gold);
   transform:translateY(-4px);
 }
-
 .socials img{width:24px}
 
-/* ================== MOBILE ================== */
+/* ===== ANIM ===== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:768px){
   .logo-hero{width:270px}
-  .content{margin-top:40px}
   h1{font-size:32px}
 }
 </style>
@@ -191,18 +194,14 @@ h1{
 
 <body>
 
-<!-- ================== HERO ================== -->
+<!-- ===== HERO ===== -->
 <section class="section">
   <div class="bg" style="background-image:url('storefront.jpg')"></div>
   <div class="overlay"></div>
 
-  <!-- LOGO EIGENE ZONE -->
-  <div class="logo-wrapper">
+  <div class="hero-stack">
     <img src="logo.png" class="logo-hero" alt="Oskar Markt Logo">
-  </div>
 
-  <!-- TEXT -->
-  <div class="content">
     <h1>أوسكار ماركت</h1>
     <div class="sub-de">Der moderne orientalische Markt – Frische & Qualität</div>
 
@@ -223,37 +222,37 @@ h1{
   </div>
 </section>
 
-<!-- ================== FRUITS ================== -->
+<!-- ===== FRUITS ===== -->
 <section class="section">
   <div class="bg" style="background-image:url('fruits1.jpg')"></div>
   <div class="overlay"></div>
-  <div class="content section-text">
+  <div class="hero-stack section-text">
     <h2>فواكه وخضروات طازجة</h2>
     <div class="de">Frisches Obst & Gemüse – täglich frisch</div>
   </div>
 </section>
 
-<!-- ================== MEAT ================== -->
+<!-- ===== MEAT ===== -->
 <section class="section">
   <div class="bg" style="background-image:url('meat.jpg')"></div>
   <div class="overlay"></div>
-  <div class="content section-text">
+  <div class="hero-stack section-text">
     <h2>قسم اللحوم – حلال</h2>
     <div class="de">Frisches Halal-Fleisch · ⭐ Fleischtheke schließt um 19:00 Uhr</div>
   </div>
 </section>
 
-<!-- ================== PRODUCTS ================== -->
+<!-- ===== PRODUCTS ===== -->
 <section class="section">
   <div class="bg" style="background-image:url('shelves1.jpg')"></div>
   <div class="overlay"></div>
-  <div class="content section-text">
+  <div class="hero-stack section-text">
     <h2>منتجات شرقية مختارة</h2>
     <div class="de">Gewürze · Hülsenfrüchte · Olivenöl · Spezialitäten</div>
   </div>
 </section>
 
-<!-- ================== FOOTER ================== -->
+<!-- ===== FOOTER ===== -->
 <section class="footer">
   <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
   <p>Bei Fragen kannst du uns kontaktieren über:</p>
