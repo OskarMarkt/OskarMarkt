@@ -22,14 +22,14 @@ body{
   color:#fff;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTION ===== */
 .section{
   position:relative;
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:80px 20px;
+  padding:90px 20px;
   overflow:hidden;
 }
 
@@ -38,7 +38,7 @@ body{
   inset:0;
   background-size:cover;
   background-position:center;
-  filter:brightness(.85);
+  filter:brightness(.88);
   transform:scale(1.05);
   animation:bgZoom 18s linear infinite;
 }
@@ -58,7 +58,7 @@ body{
   );
 }
 
-/* ===== HERO STACK (LOGO + TEXT ZENTRIERT) ===== */
+/* ===== HERO STACK ===== */
 .hero-stack{
   position:relative;
   z-index:2;
@@ -66,7 +66,6 @@ body{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  gap:22px;
   animation:fadeUp 1.2s ease forwards;
 }
 
@@ -74,18 +73,23 @@ body{
 .logo-hero{
   width:400px;
   max-width:85%;
+  margin-bottom:35px; /* <<< WICHTIG: Abstand zum Text */
   filter:
     drop-shadow(0 12px 28px rgba(0,0,0,.75))
     drop-shadow(0 0 18px rgba(212,175,55,.6));
-  animation:logoFade 1.4s ease forwards;
 }
 
-@keyframes logoFade{
-  from{opacity:0;transform:translateY(-12px)}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* TEXT */
+/* TEXT BLOCK (HOCHGEZOGEN) */
+.hero-text{
+  margin-top:-10px; /* <<< zieht den Kreis-Bereich hoch */
+}
+
+/* TITLES */
 h1{
   font-size:44px;
   color:var(--gold);
@@ -101,26 +105,20 @@ h1{
 
 /* BADGE */
 .badge{
-  padding:8px 20px;
+  margin:18px 0;
+  padding:8px 22px;
   border-radius:22px;
   background:rgba(111,191,115,.22);
   border:1px solid rgba(111,191,115,.45);
   font-size:14px;
-  animation:pulse 3s infinite;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(111,191,115,.35)}
-  70%{box-shadow:0 0 0 14px rgba(111,191,115,0)}
-  100%{box-shadow:0 0 0 0 rgba(111,191,115,0)}
 }
 
 /* BUTTONS */
 .buttons{
   display:flex;
   gap:14px;
-  flex-wrap:wrap;
   justify-content:center;
+  flex-wrap:wrap;
 }
 
 .button{
@@ -136,17 +134,6 @@ h1{
 .button:hover{
   transform:translateY(-5px);
   box-shadow:0 30px 65px rgba(212,175,55,.6);
-}
-
-/* ===== TEXT SECTIONS ===== */
-.section-text h2{
-  font-size:32px;
-  margin-bottom:6px;
-  text-shadow:0 2px 12px rgba(111,191,115,.3);
-}
-.section-text .de{
-  font-size:15px;
-  opacity:.85;
 }
 
 /* ===== FOOTER ===== */
@@ -178,16 +165,11 @@ h1{
 }
 .socials img{width:24px}
 
-/* ===== ANIM ===== */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .logo-hero{width:270px}
+  .logo-hero{width:270px;margin-bottom:28px}
   h1{font-size:32px}
+  .hero-text{margin-top:-6px}
 }
 </style>
 </head>
@@ -202,60 +184,32 @@ h1{
   <div class="hero-stack">
     <img src="logo.png" class="logo-hero" alt="Oskar Markt Logo">
 
-    <h1>أوسكار ماركت</h1>
-    <div class="sub-de">Der moderne orientalische Markt – Frische & Qualität</div>
+    <div class="hero-text">
+      <h1>أوسكار ماركت</h1>
+      <div class="sub-de">Der moderne orientalische Markt – Frische & Qualität</div>
 
-    <div class="badge">
-      🔥 عروض جديدة أسبوعيًا – wöchentliche Angebote auf Social Media
+      <div class="badge">
+        🔥 عروض جديدة أسبوعيًا – wöchentliche Angebote auf Social Media
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://www.tiktok.com/@oskargrosshandel" target="_blank">
+          TikTok
+        </a>
+        <a class="button"
+           href="https://maps.google.com/?q=Marktstraße+27+41236+Mönchengladbach"
+           target="_blank">
+          📍 Zum Markt navigieren
+        </a>
+      </div>
     </div>
-
-    <div class="buttons">
-      <a class="button" href="https://www.tiktok.com/@oskargrosshandel" target="_blank">
-        TikTok
-      </a>
-      <a class="button"
-         href="https://maps.google.com/?q=Marktstraße+7+41236+Mönchengladbach"
-         target="_blank">
-        📍 Zum Markt navigieren
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FRUITS ===== -->
-<section class="section">
-  <div class="bg" style="background-image:url('fruits1.jpg')"></div>
-  <div class="overlay"></div>
-  <div class="hero-stack section-text">
-    <h2>فواكه وخضروات طازجة</h2>
-    <div class="de">Frisches Obst & Gemüse – täglich frisch</div>
-  </div>
-</section>
-
-<!-- ===== MEAT ===== -->
-<section class="section">
-  <div class="bg" style="background-image:url('meat.jpg')"></div>
-  <div class="overlay"></div>
-  <div class="hero-stack section-text">
-    <h2>قسم اللحوم – حلال</h2>
-    <div class="de">Frisches Halal-Fleisch · ⭐ Fleischtheke schließt um 19:00 Uhr</div>
-  </div>
-</section>
-
-<!-- ===== PRODUCTS ===== -->
-<section class="section">
-  <div class="bg" style="background-image:url('shelves1.jpg')"></div>
-  <div class="overlay"></div>
-  <div class="hero-stack section-text">
-    <h2>منتجات شرقية مختارة</h2>
-    <div class="de">Gewürze · Hülsenfrüchte · Olivenöl · Spezialitäten</div>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <section class="footer">
   <h2>عند الاستفسار يمكنك التواصل معنا عبر</h2>
-  <p>Bei Fragen kannst du uns kontaktieren über:</p>
+  <p>Bei Fragen können Sie uns kontaktieren über:</p>
 
   <div class="socials">
     <a href="https://www.tiktok.com/@oskargrosshandel" target="_blank">
@@ -271,7 +225,7 @@ h1{
 
   <p>
     📞 +49 172 5859134<br>
-    📍 Marktstraße 7, 41236 Mönchengladbach<br>
+    📍 Marktstraße 27, 41236 Mönchengladbach<br>
     🕒 Montag – Samstag: 08:30 – 20:30
   </p>
 </section>
